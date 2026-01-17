@@ -2,8 +2,14 @@ import mongoose from "mongoose";
 
 const ProposalSchema = new mongoose.Schema(
   {
-    rfpId: mongoose.Schema.Types.ObjectId,
-    vendorId: mongoose.Schema.Types.ObjectId,
+    rfpId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Rfp",
+    },
+    vendorId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Vendor",
+    },
     totalPrice: Number,
     deliveryDays: Number,
     paymentTerms: String,
